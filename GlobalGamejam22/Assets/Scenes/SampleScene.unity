@@ -642,7 +642,7 @@ MonoBehaviour:
   - {fileID: 1889350264}
   - {fileID: 151259768}
   baseProjectileSpeed: 8
-  baseEnemyCooldown: 0.4
+  baseEnemyCooldown: 0.3
   scoreThresholds: 000000000a0000002800000064000000
   level: 1
   changeEnemiesTime: 3
