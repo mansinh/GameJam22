@@ -10,6 +10,8 @@ public class Interactables : MonoBehaviour
 
     public GameObject QTEvent;
 
+    public GameObject Shotanim;
+
     public float width;
     public float height;
 
@@ -60,7 +62,11 @@ public class Interactables : MonoBehaviour
 
     public IEnumerator Shot() {
         Debug.Log("Shot");
+        Shotanim.SetActive(true);
+
         yield return new WaitForSeconds(0.2f);
+
+        Shotanim.SetActive(false);
 
         Spawn();
 
