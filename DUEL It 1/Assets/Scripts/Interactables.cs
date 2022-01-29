@@ -12,6 +12,8 @@ public class Interactables : MonoBehaviour
 
     public GameObject Shotanim;
 
+    public Animator EnemyReload;
+
     public float width;
     public float height;
 
@@ -94,7 +96,9 @@ public class Interactables : MonoBehaviour
 
         if(((Score.value%6)==0) && DisipationTime > 0.3f) {
             Debug.Log("Enemy Reloading");
+            EnemyReload.SetBool("Reload",true);
             yield return new WaitForSeconds(4);
+            EnemyReload.SetBool("Reload",false);
             Debug.Log("End of Reloading");
             //DisipationTime = DisipationTime -0.1f;
             DisipationTime = difficultyCurve.GetDissapationTime(Score.value/6);
