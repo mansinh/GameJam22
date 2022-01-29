@@ -41,7 +41,7 @@ public class Interactables : MonoBehaviour
     }
 
     public void Round() {
-        Debug.Log("Round");
+        //Debug.Log("Round");
         StartCoroutine(BetweenTimer());
     }
 
@@ -59,12 +59,12 @@ public class Interactables : MonoBehaviour
 
         QTEvent.transform.localScale = new Vector3(radius, radius, radius);
 
-        Debug.Log(QTEvent);
-        Debug.Log("Spawned");
+        //Debug.Log(QTEvent);
+        //Debug.Log("Spawned");
     }
 
     public IEnumerator Shot() {
-        Debug.Log("Shot");
+        //Debug.Log("Shot");
         Shotanim.SetActive(true);
 
         yield return new WaitForSeconds(0.2f);
@@ -86,29 +86,29 @@ public class Interactables : MonoBehaviour
     public void D() {
         Destroy(QTEvent);
         Score.value++;
-        Debug.Log("Destroyed by click");
+        //Debug.Log("Destroyed by click");
         StopAllCoroutines();
         Round();
     }
 
     public IEnumerator BetweenTimer() {
-        Debug.Log("Aim");
+        //Debug.Log("Aim");
 
         if(((Score.value%6)==0) && DisipationTime > 0.3f) {
-            Debug.Log("Enemy Reloading");
+            //Debug.Log("Enemy Reloading");
             EnemyReload.SetBool("Reload",true);
             yield return new WaitForSeconds(4);
             EnemyReload.SetBool("Reload",false);
-            Debug.Log("End of Reloading");
+            //Debug.Log("End of Reloading");
             //DisipationTime = DisipationTime -0.1f;
             DisipationTime = difficultyCurve.GetDissapationTime(Score.value/6);
             Debug.Log("Round: " + (Score.value / 6) + " DissapationTime: " + DisipationTime);
         }
 
         float T = Random.RandomRange(0.3f,1.5f);
-        Debug.Log(T);
+        //Debug.Log(T);
         yield return new WaitForSeconds(T);
-        Debug.Log(" end of Aiming");
+        //Debug.Log(" end of Aiming");
 
         StartCoroutine(Shot());
     }
