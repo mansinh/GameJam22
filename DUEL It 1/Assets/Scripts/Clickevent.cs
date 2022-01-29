@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Clickevent : MonoBehaviour
 {
+    FloatVariable score;
     public GameObject Circle;
     Interactables INC;
 

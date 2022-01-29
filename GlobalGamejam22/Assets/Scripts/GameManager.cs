@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
             if (level >= 1)
             {
                 projectileSpeed.value = Mathf.Min(baseProjectileSpeed + 0.2f * level,11);
-                enemyCooldown.value = Mathf.Max(baseEnemyCooldown - 0.02f* level,0.2f);
+                enemyCooldown.value = Mathf.Max(baseEnemyCooldown - 0.02f* level,0.15f);
             }
 
             if (level >= 4)

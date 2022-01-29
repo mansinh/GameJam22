@@ -15,7 +15,8 @@ public class Interactables : MonoBehaviour
     public float width;
     public float height;
 
-    public int Score;
+    public FloatVariable Score;
+    public DifficultyCurve difficultyCurve;
 
     bool alive = true;
 
@@ -23,7 +24,7 @@ public class Interactables : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
-
+        Score.value = 0;
         width = Hitfield.GetComponent<BoxCollider2D>().bounds.size.x;
         height = Hitfield.GetComponent<BoxCollider2D>().bounds.size.y;
 
@@ -82,7 +83,7 @@ public class Interactables : MonoBehaviour
 
     public void D() {
         Destroy(QTEvent);
-        Score++;
+        Score.value++;
         Debug.Log("Destroyed by click");
         StopAllCoroutines();
         Round();
@@ -91,11 +92,14 @@ public class Interactables : MonoBehaviour
     public IEnumerator BetweenTimer() {
         Debug.Log("Aim");
 
-        if(((Score%6)==0) && DisipationTime > 0.3f) {
+        if(((Score.value%6)==0) && DisipationTime > 0.3f) {
             Debug.Log("Enemy Reloading");
             yield return new WaitForSeconds(4);
             Debug.Log("End of Reloading");
-            DisipationTime = DisipationTime -0.1f;}
+            //DisipationTime = DisipationTime -0.1f;
+            DisipationTime = difficultyCurve.GetDissapationTime(Score.value/6);
+            Debug.Log("Round: " + (Score.value / 6) + " DissapationTime: " + DisipationTime);
+        }
 
         float T = Random.RandomRange(0.3f,1.5f);
         Debug.Log(T);
