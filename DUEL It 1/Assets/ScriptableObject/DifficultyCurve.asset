@@ -14,7 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dissapationTime:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.03779363
+      value: 20.04469
+      inSlope: -0.091464184
+      outSlope: -0.091464184
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2617198
+    - serializedVersion: 3
+      time: 13.251974
+      value: 19.88997
+      inSlope: -0.022383282
+      outSlope: -0.022383282
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 27.686714
+      value: -0.0839845
+      inSlope: -4.3641286
+      outSlope: -4.3641286
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09113221
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

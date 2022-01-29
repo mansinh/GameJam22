@@ -448,7 +448,8 @@ MonoBehaviour:
   EnemyReload: {fileID: 615684249}
   width: 0
   height: 0
-  Score: 0
+  Score: {fileID: 11400000, guid: 5bf73987aa9374a4683ff720d18e4ab2, type: 2}
+  difficultyCurve: {fileID: 11400000, guid: fdd827957e3a28449b41ba2f7d9345b3, type: 2}
   DisipationTime: 2
 --- !u!61 &1378626723
 BoxCollider2D:
